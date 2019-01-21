@@ -9,6 +9,7 @@ const routeNavigator = {
 };
 
 const configNavigator = {
+    headerMode: 'none',
     transitionConfig: () => {
         transitionSpec: {
             duration: 150
