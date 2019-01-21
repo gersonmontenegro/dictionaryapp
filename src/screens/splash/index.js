@@ -1,4 +1,4 @@
-import React, { memo } from 'react';
+import React from 'react';
 import { View } from 'react-native';
 import LogoComponent from './LogoApp';
 import { SplashStyle } from './Splash.styles';
@@ -11,4 +11,4 @@ const SplashScreen = () => {
     );
 }
 
-export default memo(SplashScreen);
+export default SplashScreen;
