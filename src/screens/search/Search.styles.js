@@ -28,5 +28,14 @@ export const searchStyles = StyleSheet.create({
         fontFamily: 'Prata-Regular',
         borderColor: 'black',
         borderWidth: 1
+    },
+    searchResultsTitleContainer: {
+        height: 30,
+        backgroundColor: 'gray',
+        justifyContent: 'center'
+    },
+    searchResultsTitle: {
+        fontFamily: 'Prata-Regular',
+        marginLeft: 5
     }
 });
