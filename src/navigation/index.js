@@ -2,6 +2,7 @@ import React from 'react';
 import { createStackNavigator } from 'react-navigation';
 import SplashScreen from 'src/screens/splash';
 import SearchScreen from 'src/screens/search';
+import DetailScreen from 'src/screens/detail';
 
 const routeNavigator = {
     Splash: {
@@ -9,11 +10,14 @@ const routeNavigator = {
     },
     Search: {
         screen: SearchScreen
+    },
+    Detail: {
+        screen: DetailScreen
     }
 };
 
 const configNavigator = {
-    initialRouteName: 'Search',
+    initialRouteName: 'Detail',
     headerMode: 'none',
     transitionConfig: () => {
         transitionSpec: {
