@@ -1,6 +1,7 @@
 import React, { PureComponent } from 'react';
 import { View, Text } from 'react-native';
 import GenericHeader from 'src/components/GenericHeader';
+import Detail from './Detail';
 
 class DetailScreen extends PureComponent {
     constructor(props) {
@@ -12,23 +13,7 @@ class DetailScreen extends PureComponent {
             <View style={{ flex: 1 }}>
                 <GenericHeader title="Forever" />
                 <View style={{ flex: 1, backgroundColor: 'white' }}>
-                    <View style={{ marginLeft: 5, marginRight: 5 }}>
-                        <Text style={{ color: 'red', borderBottomColor: 'gray', borderBottomWidth: 1 }}>ADVERB</Text>
-                        <View>
-                            <View style={{ flexDirection: 'row' }}>
-                                <Text style={{ width: 20, fontSize: 12, fontWeight: 'bold' }}>1</Text>
-                                <Text style={{ fontFamily: 'Prata-Regular' }}>For all future time...</Text>
-                            </View>
-                            <Text style={{ fontWeight: 'bold', marginLeft: 15, fontFamily: 'Prata-Regular' }}>'She can eat that forever!'</Text>
-                        </View>
-                        <View>
-                            <View style={{ flexDirection: 'row' }}>
-                                <Text style={{ width: 20, fontSize: 12, fontWeight: 'bold' }}>2</Text>
-                                <Text style={{ fontFamily: 'Prata-Regular' }}>Continually</Text>
-                            </View>
-                            <Text style={{ fontWeight: 'bold', marginLeft: 15, fontFamily: 'Prata-Regular' }}>'She was forever pushing her hair out of her eyes'</Text>
-                        </View>
-                    </View>
+                    <Detail title="ADVERB" />
                     <View style={{ marginLeft: 5, marginRight: 5 }}>
                         <Text style={{ color: 'red', borderBottomColor: 'gray', borderBottomWidth: 1 }}>ADJECTIVE</Text>
                         <View>
