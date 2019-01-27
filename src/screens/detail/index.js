@@ -8,9 +8,9 @@ class DetailScreen extends PureComponent {
         super(props);
         this.state = {
             data: [
-                { definition: "asd 1", example: "adasd 1" },
-                { definition: "asd 2", example: "adasd 2" },
-                { definition: "Continually", example: "'She was forever pushing her hair out of her eyes'" }
+                { key: 1, definition: "asd 1", example: "adasd 1" },
+                { key: 2, definition: "asd 2", example: "adasd 2" },
+                { key: 3, definition: "Continually", example: "'She was forever pushing her hair out of her eyes'" }
             ]
         }
     }
