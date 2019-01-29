@@ -2,6 +2,7 @@ import React, { PureComponent } from 'react';
 import { View, Text } from 'react-native';
 import GenericHeader from 'src/components/GenericHeader';
 import Detail from './Detail';
+import Pronuntiation from './Pronuntiation';
 
 class DetailScreen extends PureComponent {
     constructor(props) {
@@ -31,10 +32,7 @@ class DetailScreen extends PureComponent {
                             <Text style={{ fontWeight: 'bold', marginLeft: 15, fontFamily: 'Prata-Regular' }}>'parenting is a forever job'</Text>
                         </View>
                     </View>
-                    <View style={{ marginTop: 10, marginLeft: 5 }}>
-                        <Text style={{ fontFamily: 'Prata-Regular', fontWeight: 'bold', color: 'black' }}>Pronuntiation</Text>
-                        <Text style={{ fontFamily: 'Prata-Regular', fontWeight: 'bold', color: 'black' }}>forever /fəˈrɛvə/</Text>
-                    </View>
+                    <Pronuntiation pron="forever /fəˈrɛvə/" />
                 </View>
             </View>
         );
