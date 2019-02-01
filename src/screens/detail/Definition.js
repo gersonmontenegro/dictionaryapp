@@ -9,29 +9,24 @@ const Definition = ({ id, definition, example }) => {
                 <Text style={{ fontFamily: 'Prata-Regular' }}>{definition}</Text>
             </View>
             <Text style={{ fontWeight: 'bold', marginLeft: 15, fontFamily: 'Prata-Regular' }}>{example}</Text>
+            <View>
+                {
+                    // createExampleList(new Map([[true, 7], [{ foo: 3 }, ['abc']]]))
+                    createExampleList([1, 99, 3])
+                    // createExampleList(new Map(JSON.parse([{ e: 1, e: 99, e: 3 }])))
+                }
+            </View>
         </View>
     );
 }
 
-function loadDict() {
-    let url = "https://od-api.oxforddictionaries.com/api/v1/entries/en/forever/regions=us";
-    let options = {
-        headers: { "app_id": "9d8a319a", "app_key": "5e52771af8525d683fafa9353a4ccab8" },
-        method: 'GET'
-    }
-    fetch(url, options)
-        .then(r => {
-            if (r.status === 200) {
-                return r.json();
-            } else {
-                console.log("Error fetching...");
-            }
-        })
-        .then(data => {
-            console.log(data);
-        }).catch(e => {
-            console.log("E", JSON.stringify(e));
+createExampleList = (data) => {
+    return data.map(i => <Text>->{i}</Text>);
 
-        });
+    // return examples.map((item, index) => {
+    //     return <Text style={{ fontWeight: 'bold', marginLeft: 15, fontFamily: 'Prata-Regular' }}>{item}</Text>
+    // });
 }
+
+
 export default Definition;
