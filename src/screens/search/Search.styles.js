@@ -23,11 +23,8 @@ export const searchStyles = StyleSheet.create({
         marginTop: 2
     },
     inputStyle: {
-        height: 50,
-        backgroundColor: 'white',
         fontFamily: 'Prata-Regular',
-        borderColor: 'black',
-        borderWidth: 1
+        fontSize: 15,
     },
     searchResultsTitleContainer: {
         height: 30,
