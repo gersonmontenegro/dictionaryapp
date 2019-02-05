@@ -21,7 +21,7 @@ class SearchInput extends PureComponent {
             <View style={searchStyles.inputContainer}>
                 <SearchBar
                     placeholder="Search......"
-                    inputStyle={{ fontFamily: 'Prata-Regular', fontSize: 15 }}
+                    inputStyle={searchStyles.inputStyle}
                     value={this.state.searchWord}
                     onChangeText={this.updateSearch}
                     containerStyle={{ backgroundColor: 'white' }}
