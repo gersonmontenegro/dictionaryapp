@@ -1,5 +1,6 @@
 import React, { PureComponent } from 'react';
 import { View, ToastAndroid } from 'react-native';
+import { connect } from 'react-redux';
 import { searchStyles } from 'src/screens/search/Search.styles';
 import SearchWord from 'src/providers/';
 import { SearchBar } from 'react-native-elements';
@@ -11,7 +12,8 @@ class SearchInput extends PureComponent {
         this.search = new SearchWord();
         this.state = {
             searchWord: '',
-            showLoading: false
+            showLoading: false,
+            results: []
         };
     }
 
@@ -57,4 +59,10 @@ class SearchInput extends PureComponent {
         );
     }
 }
-export default SearchInput;
+
+const maptStateToProps = (state) => {
+    const { results } = state;
+    return { results };
+}
+
+export default connect(maptStateToProps)(SearchInput);
