@@ -5,6 +5,8 @@ import { searchStyles } from 'src/screens/search/Search.styles';
 import SearchWord from 'src/providers/';
 import { SearchBar } from 'react-native-elements';
 import SearchButton from 'src/screens/search/SearchButton';
+import { bindActionCreators } from 'redux';
+import { addWords } from 'src/actions';
 
 class SearchInput extends PureComponent {
     constructor(props) {
@@ -28,7 +30,7 @@ class SearchInput extends PureComponent {
         if (this.state.searchWord.length) {
             result = await this.search.initSearchAsync(this.state.searchWord);
             if (result) {
-                console.log("good!");
+                this.props.addWords(result.results[0]);
             } else {
                 this.showToast(`No results for "${this.state.searchWord}"`);
             }
@@ -65,4 +67,13 @@ const maptStateToProps = (state) => {
     return { results };
 }
 
-export default connect(maptStateToProps)(SearchInput);
+const mapDispatchToProps = dispatch => (
+    bindActionCreators(
+        {
+            addWords
+        },
+        dispatch
+    )
+);
+
+export default connect(maptStateToProps, mapDispatchToProps)(SearchInput);
