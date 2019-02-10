@@ -46,3 +46,7 @@ With the previous interface I got my initial scope in order to start to define t
  - At the end of lexical categories, show phonetic pronunciation.
 
 I think that's ok at least for the first prototype.
+
+After a few days, at this moment I've already done the search functionality, and the redux implementation as well, at least until the search results list component.
+
+Now is time to show the detail component, and it's supposed that it wouldn't take to much time because the data is on the redux store.
