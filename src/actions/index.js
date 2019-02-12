@@ -4,3 +4,10 @@ export const addWords = words => (
         payload: words
     }
 )
+
+export const setDetail = details => (
+    {
+        type: 'SET_DETAIL',
+        payload: details
+    }
+)
