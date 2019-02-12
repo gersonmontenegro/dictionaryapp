@@ -1,7 +1,8 @@
 import { combineReducers } from 'redux';
 
 const INITIAL_STATE = {
-    words: []
+    words: [],
+    currentDetail: {}
 };
 
 const resultsReducer = (state = INITIAL_STATE, action) => {
@@ -18,7 +19,10 @@ const resultsReducer = (state = INITIAL_STATE, action) => {
                 });
             });
             const newState = { words };
-            console.debug(newState);
+            return newState;
+        }
+        case 'SET_DETAIL': {
+            const newState = { currentDetail: action.payload };
             return newState;
         }
         default:
