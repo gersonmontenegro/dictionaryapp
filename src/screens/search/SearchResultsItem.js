@@ -3,6 +3,7 @@ import { View, Text, TouchableHighlight } from 'react-native';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { setDetail } from 'src/actions';
+import { withNavigation } from 'react-navigation';
 
 class SearchResultsItem extends PureComponent {
     constructor(props) {
@@ -43,4 +44,4 @@ const maptStateToProps = (state) => {
     return { currentDetail };
 }
 
-export default connect(maptStateToProps, mapDispatchToProps)(SearchResultsItem);
+export default connect(maptStateToProps, mapDispatchToProps)(withNavigation(SearchResultsItem));
