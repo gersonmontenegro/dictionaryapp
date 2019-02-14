@@ -22,7 +22,7 @@ const resultsReducer = (state = INITIAL_STATE, action) => {
             return newState;
         }
         case 'SET_DETAIL': {
-            const newState = { currentDetail: action.payload };
+            const newState = { ...state, currentDetail: { ...action.payload } };
             return newState;
         }
         default:
