@@ -3,6 +3,7 @@ import { View, Text, TouchableHighlight } from 'react-native';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { setDetail } from 'src/actions';
+import { withNavigation } from 'react-navigation';
 
 class SearchResultsItem extends PureComponent {
     constructor(props) {
@@ -24,8 +25,8 @@ class SearchResultsItem extends PureComponent {
 
     onClickItem = () => {
         const { word, lexicalCategory, senses } = this.props;
-        this.props.setDetail({ word, lexicalCategory, senses });
-        console.debug('>', this.props.navigation);
+        this.props.setDetail({ word: word, lexicalCategory: lexicalCategory, senses: senses });
+        this.props.navigation.navigate('Detail');
     }
 }
 
@@ -43,4 +44,4 @@ const maptStateToProps = (state) => {
     return { currentDetail };
 }
 
-export default connect(maptStateToProps, mapDispatchToProps)(SearchResultsItem);
+export default connect(maptStateToProps, mapDispatchToProps)(withNavigation(SearchResultsItem));
