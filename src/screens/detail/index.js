@@ -3,6 +3,7 @@ import { View, Text } from 'react-native';
 import GenericHeader from 'src/components/GenericHeader';
 import Detail from './Detail';
 import Pronuntiation from './Pronuntiation';
+import { connect } from 'react-redux';
 
 class DetailScreen extends PureComponent {
     constructor(props) {
@@ -20,7 +21,7 @@ class DetailScreen extends PureComponent {
     render() {
         return (
             <View style={{ flex: 1 }}>
-                <GenericHeader title="Forever" />
+                <GenericHeader title={this.props.results.currentDetail.word} />
                 <View style={{ flex: 1, backgroundColor: 'white' }}>
                     <Detail title="ADVERB" data={this.state.data} />
                     <View style={{ marginLeft: 5, marginRight: 5 }}>
@@ -40,4 +41,9 @@ class DetailScreen extends PureComponent {
     }
 }
 
-export default DetailScreen;
+const mapStateToProps = state => {
+    const { results } = state;
+    return { results };
+}
+
+export default connect(mapStateToProps)(DetailScreen);
