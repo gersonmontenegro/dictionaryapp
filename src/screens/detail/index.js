@@ -18,6 +18,10 @@ class DetailScreen extends PureComponent {
         }
     }
 
+    extractingLexicalCategory({ lexicalCategory }) {
+        return lexicalCategory.toString().toUpperCase();
+    }
+
     render() {
         return (
             <View style={{ flex: 1 }}>
