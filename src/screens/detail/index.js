@@ -3,6 +3,7 @@ import { View, Text } from 'react-native';
 import GenericHeader from 'src/components/GenericHeader';
 import Detail from './Detail';
 import Pronuntiation from './Pronuntiation';
+import { connect } from 'react-redux';
 
 class DetailScreen extends PureComponent {
     constructor(props) {
@@ -40,4 +41,9 @@ class DetailScreen extends PureComponent {
     }
 }
 
-export default DetailScreen;
+const mapStateToProps = state => {
+    const { results } = state;
+    return { results };
+}
+
+export default connect(mapStateToProps)(DetailScreen);
