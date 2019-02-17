@@ -21,7 +21,7 @@ class DetailScreen extends PureComponent {
     render() {
         return (
             <View style={{ flex: 1 }}>
-                <GenericHeader title="Forever" />
+                <GenericHeader title={this.props.results.currentDetail.word} />
                 <View style={{ flex: 1, backgroundColor: 'white' }}>
                     <Detail title="ADVERB" data={this.state.data} />
                     <View style={{ marginLeft: 5, marginRight: 5 }}>
