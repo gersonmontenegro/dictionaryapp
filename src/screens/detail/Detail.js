@@ -17,7 +17,7 @@ const Detail = ({ title, data }) => {
 
 createDefinitions = (data) => {
     return data.map((item, index) => {
-        return <Definition {...item} key={item.id.toString()} />
+        return <Definition {...item} id={(index + 1).toString()} />
     })
 }
 
