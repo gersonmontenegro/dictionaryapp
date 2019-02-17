@@ -27,8 +27,7 @@ class DetailScreen extends PureComponent {
             <View style={{ flex: 1 }}>
                 <GenericHeader title={this.props.results.currentDetail.word} />
                 <View style={{ flex: 1, backgroundColor: 'white' }}>
-                    <Detail title="ADVERB" data={this.state.data} />
-                    <View style={{ marginLeft: 5, marginRight: 5 }}>
+                    <Detail title={this.extractingLexicalCategory(this.props.results.currentDetail)} data={this.props.results.currentDetail.senses} />
                         <Text style={{ color: 'red', borderBottomColor: 'gray', borderBottomWidth: 1 }}>ADJECTIVE</Text>
                         <View>
                             <View style={{ flexDirection: 'row' }}>
