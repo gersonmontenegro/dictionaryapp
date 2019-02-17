@@ -1,7 +1,7 @@
 import React from 'react';
 import { View, Text } from 'react-native';
 
-const Definition = ({ id, definition, example }) => {
+const Definition = ({ id, definitions, examples }) => {
     return (
         <View key={id}>
             <View style={{ flexDirection: 'row' }}>
