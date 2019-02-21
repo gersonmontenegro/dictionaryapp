@@ -20,12 +20,12 @@ class SearchWord {
     }
 
     async initSearchAsync(word) {
-        let url = `https://od-api.oxforddictionaries.com/api/v1/entries/en/${word}/regions=us`;
-        let options = {
+        const url = `https://od-api.oxforddictionaries.com/api/v1/entries/en/${word}/regions=us`;
+        const options = {
             headers: { "app_id": app_id, "app_key": app_key },
             method: 'GET'
         }
-        let response = await fetch(url, options);
+        const response = await fetch(url, options);
         return response.status === 200 ? response.json() : false;
     }
 
