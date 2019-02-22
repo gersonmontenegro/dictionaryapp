@@ -10,22 +10,8 @@ const Definition = ({ id, definitions, examples }) => {
                 <Text style={{ fontFamily: 'Prata-Regular', fontSize: 14, fontWeight: 'bold' }}>{definitions[0]}</Text>
             </View>
             <ExamplesList list={examples} />
-            {/* <View>
-                {
-                    createExampleList(examples)
-                }
-            </View> */}
         </View>
     );
 }
-
-createExampleList = (data) => {
-    return data.map((item, index) => <Text style={{ marginLeft: 20, fontStyle: 'italic' }} id={index.toString()}>{item.text}</Text>);
-
-    // return examples.map((item, index) => {
-    //     return <Text style={{ fontWeight: 'bold', marginLeft: 15, fontFamily: 'Prata-Regular' }}>{item}</Text>
-    // });
-}
-
 
 export default Definition;
