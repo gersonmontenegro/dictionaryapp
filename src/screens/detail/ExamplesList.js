@@ -1,5 +1,6 @@
 import React from 'react';
 import { View, Text } from 'react-native';
+import { ItemList } from './ItemList';
 
 const ExamplesList = ({ list }) => {
     return (
@@ -12,7 +13,7 @@ const ExamplesList = ({ list }) => {
 }
 
 createList = (data) => {
-    return data.map((item, index) => <Text style={{ marginLeft: 20, fontStyle: 'italic', fontSize: 15 }} id={index.toString()}>{item.text}</Text>);
+    return data.map((item, index) => <ItemList index={index} text={item.text} />);
 }
 
 export default ExamplesList;
