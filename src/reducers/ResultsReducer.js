@@ -14,6 +14,7 @@ const resultsReducer = (state = INITIAL_STATE, action) => {
                 words.push({
                     word: item.text,
                     lexicalCategory: item.lexicalCategory,
+                    pronunciations: item.pronunciations,
                     senses: item.entries[0].senses,
                     key: c++
                 });
