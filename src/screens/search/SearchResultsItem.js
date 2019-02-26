@@ -24,8 +24,7 @@ class SearchResultsItem extends PureComponent {
     }
 
     onClickItem = () => {
-        const { word, lexicalCategory, senses } = this.props;
-        this.props.setDetail({ word: word, lexicalCategory: lexicalCategory, senses: senses });
+        this.props.setDetail({ ...this.props });
         this.props.navigation.navigate('Detail');
     }
 }
