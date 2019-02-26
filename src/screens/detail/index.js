@@ -37,17 +37,7 @@ class DetailScreen extends PureComponent {
                 <GenericHeader title={this.props.results.currentDetail.word} />
                 <View style={{ flex: 1, backgroundColor: 'white' }}>
                     <Detail title={this.extractingLexicalCategory(this.props.results.currentDetail)} data={this.props.results.currentDetail.senses} />
-                    {/* <View style={{ marginLeft: 5, marginRight: 5 }}>
-                        <Text style={{ color: 'red', borderBottomColor: 'gray', borderBottomWidth: 1 }}>ADJECTIVE</Text>
-                        <View>
-                            <View style={{ flexDirection: 'row' }}>
-                                <Text style={{ fontFamily: 'Prata-Regular' }}>---{this.extractingDefinition(this.props.results.currentDetail.senses[0])}---</Text>
-                            </View>
-                            <Text style={{ fontWeight: 'bold', marginLeft: 15, fontFamily: 'Prata-Regular' }}>'these puppies need a forever home'</Text>
-                            <Text style={{ fontWeight: 'bold', marginLeft: 15, fontFamily: 'Prata-Regular' }}>'parenting is a forever job'</Text>
-                        </View>
-                    </View> */}
-                    <Pronuntiation pron="forever /fəˈrɛvə/" />
+                    <Pronuntiation pron={this.extractingPronuntiation(this.props.results.currentDetail)} word={this.extractingWord(this.props.results.currentDetail)} />
                 </View>
             </View>
         );
