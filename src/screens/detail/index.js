@@ -16,10 +16,19 @@ class DetailScreen extends PureComponent {
                         { e: 'parenting is a forever job' }
             ]
         }
+    extractingDefinition(data) {
     }
 
     extractingLexicalCategory({ lexicalCategory }) {
         return lexicalCategory.toString().toUpperCase();
+    }
+
+    extractingPronuntiation({ pronunciations }) {
+        return pronunciations;
+    }
+
+    extractingWord({ word }) {
+        return word;
     }
 
     render() {
