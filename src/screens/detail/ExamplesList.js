@@ -13,7 +13,7 @@ const ExamplesList = ({ list }) => {
 }
 
 createList = (data) => {
-    return data.map((item, index) => <ItemList index={index} text={item.text} />);
+    return data.map((item, index) => <ItemList key={index} index={index} text={item.text} />);
 }
 
 export default ExamplesList;
