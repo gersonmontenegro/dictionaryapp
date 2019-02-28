@@ -1,17 +1,17 @@
 import React from 'react';
 import { View, Text } from 'react-native';
+import PronunciationItem from './PronunciationItem';
 
 const Pronuntiation = ({ pron, word }) => {
     console.debug("word is coming...", word);
     return (
         <View style={{ marginTop: 10, marginLeft: 5 }}>
-            <Text style={{ fontFamily: 'Prata-Regular', fontWeight: 'bold', color: 'black' }}>Pronuntiation ({word})</Text>
+            <Text style={{ fontFamily: 'Prata-Regular', fontWeight: 'bold', color: 'black' }}>Pronunciation ({word})</Text>
             <View>
                 {
                     getWord(pron)
                 }
             </View>
-            {/* <Text style={{ fontFamily: 'Prata-Regular', fontWeight: 'bold', color: 'black' }}>---{getWord(pron)}-</Text> */}
         </View>
     );
 }
@@ -20,21 +20,9 @@ getWord = (value) => {
     return value.map((item, index) => {
         return (
             <View key={index}>
-                <View style={{ flexDirection: 'row' }}>
-                    <Text style={{ fontFamily: 'Prata-Regular', fontStyle: 'italic' }}>
-                        Notation:
-                    </Text>
-                    <Text style={{ fontFamily: 'Prata-Regular', fontWeight: 'bold', color: 'green', marginLeft: 10 }}>
-                        {item.phoneticNotation}
-                    </Text>
-                </View>
-                <View style={{ flexDirection: 'row' }}>
-                    <Text style={{ fontFamily: 'Prata-Regular', fontStyle: 'italic', marginLeft: 10 }}>>
-                        Spelling
-                    </Text>
-                    <Text style={{ fontFamily: 'Prata-Regular', fontWeight: 'bold', color: 'red', marginLeft: 10 }}>
-                        {item.phoneticSpelling}
-                    </Text>
+                <View>
+                    <PronunciationItem title='Notation: ' color='green' value={item.phoneticNotation} />
+                    <PronunciationItem title=' >Spelling: ' color='red' value={item.phoneticSpelling} />
                 </View>
             </View>
         );
