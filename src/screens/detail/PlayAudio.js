@@ -11,6 +11,7 @@ class PlayAudio extends PureComponent {
     }
 
     componentDidMount() {
+        TrackPlayer.registerPlaybackService(() => require('./services.js'));
         this.onTrackChange = TrackPlayer.addEventListener('playback-track-changed', async (data) => {
         });
     }
