@@ -1,10 +1,16 @@
-import React from 'react';
-import { View, Text } from 'react-native';
+import TrackPlayer from 'react-native-track-player';
 
-let file = "";
+        this.onTrackChange = null;
 
-const PlayAudio = ({ audioFile }) => {
-    file = audioFile;
+    componentDidMount() {
+        this.onTrackChange = TrackPlayer.addEventListener('playback-track-changed', async (data) => {
+        });
+    }
+
+    componentWillUnmount() {
+        this.onTrackChange.remove();
+    }
+
     return (
         <View style={{ alignItems: 'center' }}>
             <TouchableOpacity onPress={onClickAudio}>
@@ -15,7 +21,26 @@ const PlayAudio = ({ audioFile }) => {
 }
 
 onClickAudio = () => {
-    console.debug(">audio!");
+        TrackPlayer.setupPlayer().then(this.onPlayerReady);
+    }
+
+    onPlayerReady = () => {
+        let track = {
+            id: '1',
+            url: this.file,
+            title: 'Word',
+            artist: 'Oxford dictionary',
+            album: '',
+            genre: '',
+            date: '2014-05-20T07:00:00+00:00',
+            artwork: '',
+        };
+        TrackPlayer.add([track]).then(() => {
+
+        });
+        TrackPlayer.play();
+    }
+
 }
 
 export default PlayAudio;
