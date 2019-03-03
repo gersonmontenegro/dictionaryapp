@@ -1,6 +1,8 @@
 import React from 'react';
-import { View, Text } from 'react-native';
+import { View, Text, Image, TouchableOpacity } from 'react-native';
 import PronunciationItem from './PronunciationItem';
+import audioIcon from 'assets/img';
+import PlayAudio from './PlayAudio';
 
 const Pronuntiation = ({ pron, word }) => {
     console.debug("word is coming...", word);
@@ -23,10 +25,19 @@ getWord = (value) => {
                 <View>
                     <PronunciationItem title='Notation: ' color='green' value={item.phoneticNotation} />
                     <PronunciationItem title=' >Spelling: ' color='red' value={item.phoneticSpelling} />
+                    {
+                        addAudioComponent(item)
+                    }
                 </View>
             </View>
         );
     });
+}
+
+addAudioComponent = ({ audioFile }) => {
+    if (audioFile) {
+        return <PlayAudio audioFile={audioFile} />
+    }
 }
 
 export default Pronuntiation;
