@@ -1,6 +1,14 @@
+import React, { PureComponent } from 'react';
+import { View, TouchableOpacity, Image } from 'react-native';
+import audioIcon from 'assets/img';
 import TrackPlayer from 'react-native-track-player';
 
+class PlayAudio extends PureComponent {
+    constructor(props) {
+        super(props);
+        this.file = props.audioFile;
         this.onTrackChange = null;
+    }
 
     componentDidMount() {
         this.onTrackChange = TrackPlayer.addEventListener('playback-track-changed', async (data) => {
@@ -11,16 +19,17 @@ import TrackPlayer from 'react-native-track-player';
         this.onTrackChange.remove();
     }
 
-    return (
-        <View style={{ alignItems: 'center' }}>
-            <TouchableOpacity onPress={onClickAudio}>
-                <Image style={{ width: 24, height: 24 }} source={audioIcon} />
-            </TouchableOpacity>
-        </View>
-    );
-}
+    render() {
+        return (
+            <View style={{ alignItems: 'center' }}>
+                <TouchableOpacity onPress={this.onClickAudio}>
+                    <Image style={{ width: 24, height: 24 }} source={audioIcon} />
+                </TouchableOpacity>
+            </View>
+        );
+    }
 
-onClickAudio = () => {
+    onClickAudio = () => {
         TrackPlayer.setupPlayer().then(this.onPlayerReady);
     }
 
@@ -42,5 +51,6 @@ onClickAudio = () => {
     }
 
 }
+
 
 export default PlayAudio;
