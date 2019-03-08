@@ -23,10 +23,14 @@ class DetailScreen extends PureComponent {
         return word;
     }
 
+    onClickBack = () => {
+        this.props.navigation.navigate('Search');
+    }
+
     render() {
         return (
             <View style={{ flex: 1 }}>
-                <GenericHeader title={this.props.results.currentDetail.word} />
+                <GenericHeader title={this.props.results.currentDetail.word} left={true} onPressLeft={this.onClickBack} />
                 <View style={{ flex: 1, backgroundColor: 'white' }}>
                     <Detail title={this.extractingLexicalCategory(this.props.results.currentDetail)} data={this.props.results.currentDetail.senses} />
                     <Pronuntiation pron={this.extractingPronuntiation(this.props.results.currentDetail)} word={this.extractingWord(this.props.results.currentDetail)} />
