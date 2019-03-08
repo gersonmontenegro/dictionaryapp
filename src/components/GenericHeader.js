@@ -6,9 +6,9 @@ const GenericHeader = ({ title, left, onPressLeft }) => {
     return (
         <View style={searchStyles.headerContainer}>
             <View style={{ flex: 1 }}>
-                <TouchableHighlight>
-                    <Image style={{ height: 30, width: 30 }} source={require('assets/img/lett_arrow.png')} />
-                </TouchableHighlight>
+                {
+                    leftButton(left, onPressLeft)
+                }
             </View>
             <View style={{ flex: 5, alignSelf: 'center' }}>
                 <Text style={searchStyles.textHeader}>{title}</Text>
