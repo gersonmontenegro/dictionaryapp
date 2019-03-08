@@ -10,7 +10,8 @@ export const searchStyles = StyleSheet.create({
         height: 40,
         backgroundColor: headerColor,
         justifyContent: 'center',
-        alignItems: 'center'
+        alignItems: 'center',
+        flexDirection: 'row'
     },
     textHeader: {
         color: 'black',
