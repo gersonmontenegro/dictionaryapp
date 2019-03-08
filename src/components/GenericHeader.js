@@ -10,11 +10,10 @@ const GenericHeader = ({ title, left, onPressLeft }) => {
                     leftButton(left, onPressLeft)
                 }
             </View>
-            <View style={{ flex: 5, alignSelf: 'center' }}>
+            <View style={{ flex: 5, alignItems: 'center' }}>
                 <Text style={searchStyles.textHeader}>{title}</Text>
             </View>
-            <View style={{ flex: 1 }}>
-
+            <View style={{ flex: 1, alignItems: 'flex-end' }}>
             </View>
         </View>
     );
