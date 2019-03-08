@@ -2,7 +2,7 @@ import React from 'react';
 import { View, Text, TouchableHighlight, Image } from 'react-native';
 import { searchStyles } from 'src/screens/search/Search.styles';
 
-const GenericHeader = ({ title }) => {
+const GenericHeader = ({ title, left, onPressLeft }) => {
     return (
         <View style={searchStyles.headerContainer}>
             <View style={{ flex: 1 }}>
