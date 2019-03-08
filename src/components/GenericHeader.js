@@ -20,4 +20,14 @@ const GenericHeader = ({ title, left, onPressLeft }) => {
     );
 }
 
+leftButton = (left, onPressLeft) => {
+    if (left) {
+        return (
+            <TouchableHighlight onPress={onPressLeft}>
+                <Image style={{ height: 30, width: 30 }} source={require('assets/img/lett_arrow.png')} />
+            </TouchableHighlight>
+        );
+    }
+};
+
 export default GenericHeader;
