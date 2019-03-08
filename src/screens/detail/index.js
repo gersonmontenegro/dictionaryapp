@@ -4,6 +4,7 @@ import GenericHeader from 'src/components/GenericHeader';
 import Detail from './Detail';
 import Pronuntiation from './Pronuntiation';
 import { connect } from 'react-redux';
+import { withNavigation } from 'react-navigation';
 
 class DetailScreen extends PureComponent {
     constructor(props) {
@@ -40,4 +41,4 @@ const mapStateToProps = state => {
     return { results };
 }
 
-export default connect(mapStateToProps)(DetailScreen);
+export default connect(mapStateToProps)(withNavigation(DetailScreen));
