@@ -9,7 +9,10 @@ const routeNavigator = {
         screen: SplashScreen
     },
     Search: {
-        screen: SearchScreen
+        screen: SearchScreen,
+        navigationOptions: {
+            gestureEnabled: false,
+        }
     },
     Detail: {
         screen: DetailScreen
@@ -17,7 +20,7 @@ const routeNavigator = {
 };
 
 const configNavigator = {
-    initialRouteName: 'Detail',
+    initialRouteName: 'Splash',
     headerMode: 'none',
     transitionConfig: () => {
         transitionSpec: {

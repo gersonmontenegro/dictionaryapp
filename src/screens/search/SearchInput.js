@@ -56,6 +56,7 @@ class SearchInput extends PureComponent {
                     containerStyle={{ backgroundColor: 'white' }}
                     showLoading={this.state.showLoading}
                     searchIcon={this.addSearchButton}
+                    onSubmitEditing={this.onSearchButtonClick}
                 />
             </View >
         );
