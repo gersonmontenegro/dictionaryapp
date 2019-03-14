@@ -2,8 +2,23 @@ import { combineReducers } from 'redux';
 
 const INITIAL_STATE = {
     words: [],
-    currentDetail: {}
+    currentDetail: {},
 };
+
+const GENERAL_DATA = {
+    showPopOver: false
+}
+
+const generalReducer = (state = GENERAL_DATA, action) => {
+    switch (action.type) {
+        case 'VIEW_POPOVER': {
+            const newState = { ...state, showPopOver: action.payload };
+            return newState;
+        }
+        default:
+            return state;
+    }
+}
 
 const resultsReducer = (state = INITIAL_STATE, action) => {
     switch (action.type) {
@@ -32,5 +47,6 @@ const resultsReducer = (state = INITIAL_STATE, action) => {
 }
 
 export default combineReducers({
-    results: resultsReducer
+    results: resultsReducer,
+    general: generalReducer
 });

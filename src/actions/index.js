@@ -11,3 +11,10 @@ export const setDetail = details => (
         payload: details
     }
 )
+
+export const viewPopover = visible => (
+    {
+        type: 'VIEW_POPOVER',
+        payload: visible
+    }
+)

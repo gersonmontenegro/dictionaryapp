@@ -6,7 +6,8 @@ import SearchWord from 'src/providers/';
 import { SearchBar } from 'react-native-elements';
 import SearchButton from 'src/screens/search/SearchButton';
 import { bindActionCreators } from 'redux';
-import { addWords } from 'src/actions';
+import { addWords, viewPopover } from 'src/actions';
+import PopOverComponent from 'src/components/PopOverComponent';
 
 class SearchInput extends PureComponent {
     constructor(props) {
@@ -28,7 +29,12 @@ class SearchInput extends PureComponent {
     onSearchButtonClick = async () => {
         let result = '';
         if (this.state.searchWord.length) {
+            this.props.viewPopover(true);
             result = await this.search.initSearchAsync(this.state.searchWord);
+            setTimeout(() => {
+                this.props.viewPopover(false);
+                console.debug("false!!!");
+            }, 300);
             if (result) {
                 this.props.addWords(result.results[0]);
             } else {
@@ -58,20 +64,21 @@ class SearchInput extends PureComponent {
                     searchIcon={this.addSearchButton}
                     onSubmitEditing={this.onSearchButtonClick}
                 />
+                <PopOverComponent showPopOver={this.props.showPopOver} />
             </View >
         );
     }
 }
 
 const maptStateToProps = (state) => {
-    const { results } = state;
-    return { results };
+    return { ...state.results, ...state.general };
 }
 
 const mapDispatchToProps = dispatch => (
     bindActionCreators(
         {
-            addWords
+            addWords,
+            viewPopover
         },
         dispatch
     )
