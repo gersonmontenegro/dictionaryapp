@@ -71,8 +71,7 @@ class SearchInput extends PureComponent {
 }
 
 const maptStateToProps = (state) => {
-    const { results } = state;
-    return { results };
+    return { ...state.results, ...state.general };
 }
 
 const mapDispatchToProps = dispatch => (
